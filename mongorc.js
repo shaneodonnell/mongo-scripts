@@ -96,8 +96,8 @@ function moveCollectionToDatabase(db1,col,db2) {
 	// Copies a collection, document by document, to the same collection in a new database
 	var db1 = db.getSiblingDB(db1);
 	var db2 = db.getSiblingDB(db2);
-	db1.col.find().forEach(function(doc){
-		db2.col.insert(doc);
+	db1[col].find().forEach(function(doc){
+		db2[col].insert(doc);
 	});
 }
 
